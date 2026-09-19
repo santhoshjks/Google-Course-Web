@@ -524,6 +524,23 @@
         display: block !important;
         font-size: 1.1rem !important;
       }
+
+      /* ── High Demand text: keep on single line ── */
+      .text-purple-700.font-extrabold,
+      .text-purple-700 {
+        white-space: nowrap !important;
+      }
+
+      /* ── "Only Through InGage" badge: center on mobile ── */
+      .scalloped-ribbon {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* ── Alert bar: center badge row on mobile ── */
+      .bg-\[\#eef4ff\].border.border-blue-200.p-3 {
+        align-items: center !important;
+      }
     }
 
     /* ── Extra-small screens (< 380px) ── */
@@ -1071,7 +1088,7 @@
           </h3>
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-12 sm:gap-6 items-center">
             <div class="sm:col-span-6 flex items-center gap-4">
-              <div class="text-5xl shrink-0">🎁</div>
+              <div class="text-5xl shrink-0 self-center sm:self-start">🎁</div>
               <div>
                 <p class="text-[20px] font-bold text-slate-800 leading-snug">
                   Enroll in any one of <span class="text-purple-700">High Demand Google Program</span> and get second
@@ -1356,7 +1373,7 @@
         </div>
         <!-- Scalloped Badge: ONLY THROUGH INGAGE *** -->
         <div
-          class="scalloped-ribbon bg-[#0a2560] text-white p-3 w-24 h-24 flex flex-col items-center justify-center text-center flex-shrink-0 shadow-lg">
+          class="scalloped-ribbon bg-[#0a2560] text-white p-3 w-24 h-24 flex flex-col items-center justify-center text-center flex-shrink-0 shadow-lg mx-auto sm:mx-0">
           <span
             class="text-[12px] font-black uppercase tracking-wider leading-tight">ONLY<br />THROUGH<br />INGAGE</span>
           <span class="text-amber-400 text-[12px] mt-0.5">★★★</span>
