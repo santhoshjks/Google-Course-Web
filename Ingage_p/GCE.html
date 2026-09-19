@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Google Cloud Engineering Program | InGage Technologies</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#06132b',
+              deepBlue: '#0c1a3b',
+              accentBlue: '#1a73e8',
+              sky: '#0284c7',
+              emerald: '#16a34a',
+              gold: '#f59e0b'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+    html {
+      font-size: 130%;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .scalloped-ribbon {
+      clip-path: polygon(50% 0%, 61% 7%, 75% 3%, 81% 16%, 95% 19%, 95% 33%, 100% 41%, 95% 53%, 99% 65%, 90% 75%, 90% 89%, 76% 91%, 69% 100%, 53% 96%, 41% 100%, 31% 92%, 17% 93%, 13% 80%, 3% 73%, 7% 59%, 1% 47%, 7% 35%, 5% 21%, 19% 16%, 23% 3%, 37% 7%);
+    }
+
+    .ai-hero-header {
+      background: transparent;
+    }
+
+    .course-selector-box {
+      background: linear-gradient(120deg, #eff6ff, #dbeafe, #ecfeff, #eff6ff);
+      background-size: 240% 240%;
+      border: 1px solid rgba(37, 99, 235, 0.24);
+      box-shadow: 0 8px 20px rgba(30, 64, 175, 0.12);
+      animation: course-background-drift 8s ease-in-out infinite;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+      will-change: transform;
+    }
+
+    .course-selector-box:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(30, 64, 175, 0.2);
+    }
+
+    .course-selector-box img {
+      transition: transform 320ms ease;
+    }
+
+    .course-selector-box:hover img {
+      transform: scale(1.06);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .course-selector-box,
+      .course-selector-box img {
+        animation: none;
+        transition: none;
+      }
+    }
+
+    @keyframes course-background-drift {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .ai-flyer {
+      background-image: linear-gradient(rgba(4, 10, 28, 0.72), rgba(4, 10, 28, 0.82)), url('https://images.unsplash.com/photo-1690627931320-16ac56eb2588?auto=format&fit=crop&w=1800&q=85');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @media (max-width: 640px) {
+      .ai-flyer {
+        background-position: 58% center;
+        background-size: cover;
+      }
+    }
+
+    .collaboration-badge-bar {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .course-step-card,
+    .exam-step-card,
+    .certified-step-card {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: step-card-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+      will-change: transform, opacity;
+    }
+
+    .course-step-card {
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.56) 100%), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation-delay: 0.05s;
+    }
+
+    .exam-step-card {
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.52) 100%), url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=85');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation-delay: 0.22s;
+    }
+
+    .certified-step-card {
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.52) 100%), url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=85');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation-delay: 0.38s;
+    }
+
+    .course-step-card:hover,
+    .exam-step-card:hover,
+    .certified-step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.16);
+    }
+
+    .step-icon-pulse {
+      animation: step-icon-float 2.6s ease-in-out infinite;
+    }
+
+    .step-arrow-pulse {
+      animation: step-arrow-nudge 1.4s ease-in-out infinite;
+    }
+
+    .step-off-badge {
+      animation: step-badge-pop 1.8s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes step-card-enter {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes step-icon-float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+    }
+
+    @keyframes step-arrow-nudge {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) translateX(0);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) translateX(4px);
+      }
+    }
+
+    @keyframes step-badge-pop {
+
+      0%,
+      100% {
+        transform: rotate(-1deg) scale(1);
+        box-shadow: 0 4px 10px rgba(220, 38, 38, 0.28);
+      }
+
+      50% {
+        transform: rotate(1deg) scale(1.06);
+        box-shadow: 0 8px 18px rgba(220, 38, 38, 0.42);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .course-step-card,
+      .exam-step-card,
+      .certified-step-card,
+      .step-icon-pulse,
+      .step-arrow-pulse,
+      .step-off-badge {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .ai-flyer {
+        background-position: 58% center;
+        background-size: cover;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#f0f4f9] text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+  <!-- BEGIN: NavigationBar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="text-xl font-black tracking-tight text-slate-900">
+          <span class="text-black">i</span><span class="text-black">n</span><span class="text-[#a6c844]">g</span><span
+            class="text-[#a6c844]">a</span><span class="text-[#a6c844]">g</span><span
+            class="text-[#a6c844]">e</span><span class="text-sm font-black tracking-tight text-blue-600">
+            EduTech
+          </span>
+        </span>
+
+      </div>
+      <div class="flex items-center space-x-4">
+        <a class="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white bg-[#0052cc] rounded-lg shadow hover:bg-blue-700 transition"
+          href="#register">
+          Register Now
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- END: NavigationBar -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10 space-y-6">
+    <!-- SECTION 1: Top Hero Grid (Flyer + Form) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- LEFT HERO BROCHURE/FLYER -->
+      <section
+        class="lg:col-span-12 bg-[#07132e] ai-flyer text-white rounded-2xl overflow-hidden shadow-xl border border-slate-800 flex flex-col font-sans">
+        <!-- Flyer Top Header Section -->
+        <div class="p-6 pb-5 relative ai-hero-header">
+          <div class="flex flex-row items-center gap-5">
+            <!-- Glowing Cloud/Chip Graphic -->
+            <div
+              class="relative w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0 bg-gradient-to-b from-blue-900/60 to-slate-900/80 rounded-2xl p-1 border border-blue-500/40 flex items-center justify-center overflow-hidden shadow-inner">
+              <!-- Radial backlight -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-blue-500/20 to-indigo-500/30"></div>
+              <!-- Cloud + circuit Graphic -->
+              <svg class="w-24 h-24 text-cyan-400 relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.7)]" fill="none"
+                stroke="currentColor" viewbox="0 0 100 100">
+                <path d="M30 62 a14 14 0 010-28 a18 18 0 0135-6 a12 12 0 0111 12 a13 13 0 01-3 22 z" fill="url(#aiGlow)"
+                  stroke-dasharray="3 2" stroke-width="2.5"></path>
+                <circle cx="40" cy="48" fill="#38bdf8" r="3.5"></circle>
+                <circle cx="58" cy="44" fill="#38bdf8" r="3"></circle>
+                <circle cx="50" cy="60" fill="#38bdf8" r="3"></circle>
+                <path d="M40 48 L58 44 M40 48 L50 60 M58 44 L50 60" stroke="#38bdf8" stroke-width="1.8"></path>
+                <defs>
+                  <lineargradient id="aiGlow" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"></stop>
+                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.1"></stop>
+                  </lineargradient>
+                </defs>
+              </svg>
+            </div>
+            <!-- Title & Subtitle -->
+            <div class="flex-1">
+              <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white leading-none">
+                Google
+              </h1>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1">
+                Cloud Engineering
+              </div>
+              <div
+                class="inline-block mt-1 px-2.5 py-0.5 bg-blue-600/90 text-white rounded text-xs font-bold uppercase tracking-wider">
+                Program
+              </div>
+              <p class="mt-2 text-xs font-medium text-slate-300">
+                Industry-Aligned Training | Certification <br class="hidden sm:inline" /> | Career Readiness
+              </p>
+            </div>
+          </div>
+          <!-- Collaboration Badge Bar -->
+          <div
+            class="collaboration-badge-bar relative mt-4 w-full min-h-[10rem] rounded-lg p-2.5 flex flex-col items-stretch justify-between gap-2 text-slate-800 shadow sm:absolute sm:top-42 sm:right-36 sm:mt-0 sm:z-10 sm:w-60 sm:h-40">
+            <div>
+              <p class="text-[10px] font-black uppercase text-slate-500 tracking-wider">Brought to you in collaboration
+                with</p>
+              <div class="flex flex-wrap items-center gap-2 mt-2">
+                <span class="text-base font-black tracking-tight">
+                  <span class="text-[#4285F4]">G</span><span class="text-[#EA4335]">o</span><span
+                    class="text-[#FBBC05]">o</span><span class="text-[#4285F4]">g</span><span
+                    class="text-[#34A853]">l</span><span class="text-[#EA4335]">e</span>
+                </span>
+
+                <span class="text-slate-400 font-light text-xs">✕</span>
+
+                <span class="text-base font-black tracking-tight">
+                  <span class="text-black">i</span><span class="text-black">n</span><span
+                    class="text-[#a6c844]">g</span><span class="text-[#a6c844]">a</span><span
+                    class="text-[#a6c844]">g</span><span class="text-[#a6c844]">e</span>
+                  <span class="text-sm font-black tracking-tight text-blue-600">
+                    EduTech
+                  </span>
+                </span>
+                <span class="text-[12px] text-slate-500 font-medium pl-1 border-l border-slate-300">Official Training
+                  Partner</span>
+              </div>
+            </div>
+            <!-- Google Skill Badges Tag -->
+            <div class="flex items-center gap-1.5 bg-blue-50 px-2.5 py-1 rounded border border-blue-100">
+              <!-- Golden Certificate Stamp Icon -->
+              <div
+                class="w-12 h-12 rounded-full bg-amber-400 text-slate-900 flex items-center justify-center font-bold text-[16px] shadow-sm flex-shrink-0">
+                ★
+              </div>
+              <div class="text-[12px] font-extrabold uppercase text-blue-900 leading-tight">
+                Industry-Recognized<br /><span class="text-blue-600">Google Cloud Skill Badges</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- What Learners Will Gain -->
+        <div class="px-6 py-4 bg-transparent">
+          <h2 class="text-sm font-black uppercase tracking-wider text-white mb-2.5 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            What Learners Will Gain
+          </h2>
+          <ul class="space-y-1.5 text-sm text-slate-200">
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold leading-tight">•</span>
+              <span>Understand core cloud computing concepts &amp; architecture</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold leading-tight">•</span>
+              <span>Gain hands-on experience with Google Cloud services</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold leading-tight">•</span>
+              <span>Deploy and manage cloud-based applications</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-cyan-400 font-bold leading-tight">•</span>
+              <span>Build scalable and secure cloud infrastructure</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Two Columns: Program Details & Why This Program -->
+        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4 bg-transparent">
+          <!-- Box 1: Program Details (White Card) -->
+          <div class="bg-white text-slate-900 rounded-xl p-4 shadow flex flex-col justify-start text-left">
+            <h3 class="text-xs font-black uppercase tracking-wider text-blue-900 border-b border-slate-200 pb-2 mb-6">
+              Program Details
+            </h3>
+            <div class="space-y-3 text-xs">
+              <div class="flex items-start gap-2.5">
+                <div
+                  class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2.5"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="font-extrabold text-slate-900 block">Duration:</span>
+                  <span class="text-slate-600">45 Hours</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <div
+                  class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="font-extrabold text-slate-900 block">Stream:</span>
+                  <span class="text-slate-600">Engineering &amp; Polytechnic, Arts &amp; Science (All Departments &amp;
+                    Years)</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <div
+                  class="w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path
+                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="font-extrabold text-slate-900 block">Includes:</span>
+                  <span class="text-slate-600">Hands-on Projects, Tool Access, Skill Badges (Equivalent to Certificate)
+                    &amp; Cloud Labs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Box 2: Why This Program (Greenish/Navy Card) -->
+          <div class="bg-[#a6c844] text-white rounded-xl p-4 shadow flex flex-col justify-between">
+            <div>
+              <h3 class="text-xs font-black uppercase tracking-wider text-blue-900 border-b border-green-700 pb-2 mb-2">
+                Why This Program?
+              </h3>
+              <ul class="text-xs space-y-1.5 text-white">
+                <li class="flex items-start gap-1">
+                  <span>•</span><span>Core cloud computing concepts</span>
+                </li>
+                <li class="flex items-start gap-1">
+                  <span>•</span><span>Deploy &amp; manage cloud applications</span>
+                </li>
+                <li class="flex items-start gap-1">
+                  <span>•</span><span>Secure &amp; scalable infrastructure setup</span>
+                </li>
+                <li class="flex items-start gap-1">
+                  <span>•</span><span>DevOps &amp; automation tools usage</span>
+                </li>
+                <li class="flex items-start gap-1">
+                  <span>•</span><span>Job-ready cloud engineering skills</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Additional Opportunities Subcard -->
+            <div class="mt-3 bg-white text-slate-900 rounded-lg p-2.5">
+              <div class="flex items-center gap-1.5 mb-1">
+                <span class="text-amber-500">🏆</span>
+                <span class="text-[10px] font-black uppercase tracking-tight text-slate-800">Additional Opportunities
+                  Provided by inGage</span>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <!-- Program Structure -->
+        <div class="px-6 py-3 bg-transparent">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">Program Structure</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-700/60">
+              <div class="flex items-center gap-2 mb-1">
+                <span
+                  class="w-4 h-4 rounded-full bg-blue-600 text-white font-bold text-[9px] flex items-center justify-center">1</span>
+                <span class="font-bold text-white text-sm">Self-Paced Learning:</span>
+              </div>
+              <p class="text-xs text-slate-400 pl-6">Free access to structured foundational modules. Covers cloud
+                basics, infrastructure, and services. Integrated online support for learners.</p>
+            </div>
+            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-700/60">
+              <div class="flex items-center gap-2 mb-1">
+                <span
+                  class="w-4 h-4 rounded-full bg-blue-600 text-white font-bold text-[9px] flex items-center justify-center">2</span>
+                <span class="font-bold text-white text-sm">Advanced Training &amp; Guided Learning:</span>
+              </div>
+              <p class="text-xs text-slate-400 pl-6">Instructor-led in-person sessions by industry experts (Paid per
+                student).</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="mt-8">
+      <!-- RIGHT REGISTRATION FORM -->
+      <section class="w-full bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-200" id="register">
+        <div class="mb-5">
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight">Student Registration</h2>
+          <p class="text-xs text-slate-500 mt-1">Fill in your information to join the Google Cloud Engineering Program
+            cohort.</p>
+        </div>
+        <form class="space-y-3.5"
+          onsubmit="event.preventDefault(); alert('Redirecting to payment gateway for ₹999...');">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1" for="fullName">Full Name</label>
+              <input
+                class="w-full rounded-md border-slate-300 bg-slate-50 text-sm shadow-sm focus:border-blue-600 focus:bg-white focus:ring-blue-600 py-2 px-3"
+                id="fullName" name="fullName" placeholder="Enter your full name" required="" type="text" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1" for="email">Email</label>
+              <input
+                class="w-full rounded-md border-slate-300 bg-slate-50 text-sm shadow-sm focus:border-blue-600 focus:bg-white focus:ring-blue-600 py-2 px-3"
+                id="email" name="email" placeholder="Enter your email" required="" type="email" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1" for="phone">Phone Number</label>
+              <input
+                class="w-full rounded-md border-slate-300 bg-slate-50 text-sm shadow-sm focus:border-blue-600 focus:bg-white focus:ring-blue-600 py-2 px-3"
+                id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" inputmode="numeric"
+                placeholder="Enter 10-digit mobile number" required="" type="tel" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1" for="college">College Name</label>
+              <input
+                class="w-full rounded-md border-slate-300 bg-slate-50 text-sm shadow-sm focus:border-blue-600 focus:bg-white focus:ring-blue-600 py-2 px-3"
+                id="college" name="college" placeholder="Enter your college name" required="" type="text" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1" for="regNumber">University Registration
+                Number</label>
+              <input
+                class="w-full rounded-md border-slate-300 bg-slate-50 text-sm shadow-sm focus:border-blue-600 focus:bg-white focus:ring-blue-600 py-2 px-3"
+                id="regNumber" name="regNumber" placeholder="Enter your University Registration Number" required=""
+                type="text" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1" for="yearOfStudy">Year of Study</label>
+              <input
+                class="w-full rounded-md border-slate-300 bg-slate-50 text-sm shadow-sm focus:border-blue-600 focus:bg-white focus:ring-blue-600 py-2 px-3"
+                id="yearOfStudy" name="yearOfStudy" placeholder="Enter your year of study" required="" type="text" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1" for="department">Department / Section</label>
+            <input
+              class="w-full rounded-md border-slate-300 bg-slate-50 text-sm shadow-sm focus:border-blue-600 focus:bg-white focus:ring-blue-600 py-2 px-3"
+              id="department" name="department" placeholder="Enter your department/section" required="" type="text" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-2" for="freeCourse">Select Your Free
+              Course</label>
+            <input id="freeCourse" name="freeCourse" required="" type="hidden" value="" />
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-6 w-full rounded-2xl border border-blue-100 bg-slate-50 p-4 shadow-inner"
+              role="radiogroup" aria-label="Free course options">
+              <label
+                class="course-option course-selector-box relative flex min-w-0 h-auto min-h-48 sm:h-52 cursor-pointer flex-col items-start gap-3 rounded-xl p-3 sm:flex-row sm:items-center hover:bg-transparent">
+                <input class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-600" name="courseChoice" required=""
+                  type="radio" value="dataanalytics" />
+                <span class="block h-28 w-full min-w-0 shrink-0 overflow-hidden rounded-lg sm:h-full sm:w-52">
+                  <img alt="Google Data Analytics course" class="h-full w-full object-cover"
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" />
+                </span>
+                <span class="min-w-0 flex-1">
+                  <span class="block text-sm font-black leading-tight text-slate-900 sm:text-base">Google Data Analytics
+                    (GDA)</span>
+                  <span class="mt-1 block text-xs font-semibold leading-tight text-slate-600 sm:text-sm">Turn raw data
+                    into business intelligence using Google-grade data workflows</span>
+                </span>
+              </label>
+              <label
+                class="course-option course-selector-box relative flex min-w-0 h-auto min-h-48 sm:h-52 cursor-pointer flex-col items-start gap-3 rounded-xl p-3 sm:flex-row sm:items-center hover:bg-transparent">
+                <input class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-600" name="courseChoice" type="radio"
+                  value="cybersecurity" />
+                <span class="block h-28 w-full min-w-0 shrink-0 overflow-hidden rounded-lg sm:h-full sm:w-52">
+                  <img alt="Google Cyber Security course" class="h-full w-full object-cover"
+                    src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1800&q=85" />
+                </span>
+                <span class="min-w-0 flex-1">
+                  <span class="block text-sm font-black leading-tight text-slate-900 sm:text-base">Google Cyber Security
+                    (GCS)</span>
+                  <span class="mt-1 block text-xs font-semibold leading-tight text-slate-600 sm:text-sm">Protect digital
+                    assets and respond to cyber threats using Google's security tools</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <p class="text-[14px] text-slate-500 mb-2">Click <strong>Submit &amp; Proceed to Payment</strong> to
+              continue to the payment page.</p>
+            <button
+              class="w-full py-3 px-4 bg-[#0052cc] hover:bg-blue-700 text-white font-black rounded-lg shadow transition text-sm tracking-wide"
+              type="submit">
+              SUBMIT &amp; PROCEED TO PAYMENT
+            </button>
+          </div>
+          <p class="text-[14px] text-slate-400 text-center leading-relaxed">
+            Your information will be securely sent to and stored in Google Sheets for the purpose of processing your
+            form submission.
+          </p>
+        </form>
+      </section>
+    </div>
+    <!-- SECTION 2: Program Fee & Special Offer -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+      <!-- Card 1: Program Fee -->
+      <div class="bg-white rounded-xl p-4 border border-slate-200/80 shadow-md flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight">
+            Program <span class="text-blue-600">Fee</span>
+          </h2>
+          <!-- Colorful underline gradient -->
+          <div class="w-14 h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-indigo-400 rounded-full mt-1 mb-10">
+          </div>
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <!-- Left Circular Badge with Wallet -->
+            <div
+              class="relative flex h-36 w-36 flex-shrink-0 flex-col items-center justify-center rounded-full border border-blue-100 bg-gradient-to-b from-blue-50/70 to-indigo-50/40 p-3 text-center shadow-inner sm:h-40 sm:w-40">
+              <!-- Sparkles -->
+              <span class="absolute top-4 left-6 text-blue-400 text-xs">✦</span>
+              <span class="absolute top-6 right-6 text-blue-400 text-xs">✦</span>
+              <span class="absolute bottom-6 left-6 text-blue-400 text-xs">✦</span>
+              <span class="absolute bottom-6 right-6 text-blue-400 text-xs">✦</span>
+              <!-- Wallet Icon -->
+              <div
+                class="relative mb-1.5 flex h-9 w-11 items-center justify-center rounded-lg bg-gradient-to-tr from-indigo-700 to-purple-600 text-white shadow">
+                <div class="absolute -top-1.5 right-2 w-4 h-3 bg-emerald-400 rounded-sm transform rotate-6 shadow-xs">
+                </div>
+                <div class="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+              </div>
+              <span class="text-sm font-semibold leading-tight text-slate-600">One-time Fee</span>
+              <span class="my-0.5 text-3xl font-black leading-none tracking-tight text-blue-600">₹999</span>
+              <span
+                class="whitespace-nowrap rounded-full bg-[#4338ca] px-2.5 py-0.5 text-[9px] font-bold leading-tight text-white">
+                Inclusive of GST
+              </span>
+            </div>
+            <!-- Right Explanation Text -->
+            <div class="text-slate-700 text-base leading-relaxed">
+              <p>
+                To provide structured mentoring, career support, placement assistance, industry sessions, and continuous
+                guidance throughout the program, there is a one-time fee of <strong class="text-slate-900">₹999
+                  (Inclusive of GST)</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2: Special Offer -->
+      <div class="bg-white rounded-xl p-4 border border-slate-200/80 shadow-md flex flex-col justify-between">
+        <div>
+          <h2 class="text-lg font-black text-slate-900 tracking-tight">
+            Special <span class="text-purple-600">Offer</span>
+          </h2>
+          <!-- Colorful underline gradient -->
+          <div class="w-14 h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-400 rounded-full mt-1 mb-3"></div>
+          <!-- Top Row: Gift Box + Main Pitch -->
+          <div class="flex flex-col sm:flex-row items-center gap-3 mb-3">
+            <!-- 3D Gift Box Graphic -->
+            <div class="w-20 h-20 flex-shrink-0 flex items-center justify-center relative">
+              <!-- Glow and particles -->
+              <div class="absolute inset-0 bg-purple-100/50 rounded-full blur-xl"></div>
+              <svg class="w-28 h-28 relative z-10" fill="none" viewbox="0 0 100 100">
+                <!-- Gift Body -->
+                <rect fill="#6d28d9" height="46" rx="4" width="56" x="22" y="42"></rect>
+                <!-- Ribbon vertical -->
+                <rect fill="#f59e0b" height="46" width="12" x="44" y="42"></rect>
+                <!-- Lid -->
+                <rect fill="#7c3aed" height="12" rx="3" width="64" x="18" y="34"></rect>
+                <rect fill="#fbbf24" height="12" width="12" x="44" y="34"></rect>
+                <!-- Ribbon Bows -->
+                <path d="M36 22 C28 22 28 34 46 34 C46 26 44 22 36 22 Z" fill="#fbbf24"></path>
+                <path d="M64 22 C72 22 72 34 54 34 C54 26 56 22 64 22 Z" fill="#f59e0b"></path>
+                <circle cx="50" cy="33" fill="#d97706" r="4"></circle>
+              </svg>
+            </div>
+            <!-- Pitch text -->
+            <div class="text-slate-800 text-xs leading-relaxed">
+              <p class="text-sm font-normal">
+                Enroll in any one of <br />
+                <span class="text-purple-700 font-extrabold text-base">High Demand</span> <br />
+                Google Program and get second program absolutely <span
+                  class="text-emerald-600 font-extrabold">free</span>.
+              </p>
+            </div>
+          </div>
+          <!-- Selection Matrix Comparison Subcards -->
+          <div class="relative pt-2">
+            <div class="grid grid-cols-11 items-center gap-2">
+              <!-- Subcard 1 -->
+              <div
+                class="col-span-5 bg-slate-50/80 p-3 rounded-xl border border-slate-200 text-center flex flex-col justify-center min-h-[110px]">
+                <p class="text-[14px] text-slate-500">Choose any one</p>
+                <p class="text-[14px] font-black text-purple-700 uppercase mt-0.5">High Demand</p>
+                <p class="text-[14px] font-semibold text-slate-800">Google Program</p>
+                <div class="mt-2 flex justify-center items-center">
+                  <!-- Google G Logo SVG -->
+                  <svg class="w-8 h-8" viewbox="0 0 48 48">
+                    <path
+                      d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+                      fill="#EA4335"></path>
+                    <path
+                      d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+                      fill="#4285F4"></path>
+                    <path
+                      d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+                      fill="#FBBC05"></path>
+                    <path
+                      d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+                      fill="#34A853"></path>
+                  </svg>
+                </div>
+              </div>
+              <!-- Plus icon -->
+              <div class="col-span-1 text-center font-black text-2xl text-blue-600">+</div>
+              <!-- Subcard 2 -->
+              <div
+                class="col-span-5 bg-slate-50/80 p-3 rounded-xl border border-slate-200 text-center flex flex-col justify-center min-h-[110px]">
+                <p class="text-[14px] text-slate-500">Get any one from</p>
+                <p class="text-[14px] font-bold text-blue-700 leading-tight mt-0.5">Google Generative AI Program</p>
+                <p class="text-[14px] text-slate-500 mt-0.5">Program or</p>
+                <p class="text-[14px] font-bold text-blue-700 leading-tight">Google Cyber Security Program</p>
+                <p class="text-[14px] font-black text-emerald-600 mt-1">for free</p>
+              </div>
+            </div>
+            <!-- Curved Connecting Arrow -->
+            <div class="flex justify-center -mt-1">
+              <svg class="w-64 h-6 text-emerald-500" fill="none" stroke="currentColor" stroke-width="1.8"
+                viewbox="0 0 260 24">
+                <path d="M 30,4 Q 130,22 230,4" stroke="url(#gradientArrow)"></path>
+                <polygon fill="#9333ea" points="228,2 236,4 228,9"></polygon>
+                <polygon fill="#10b981" points="32,2 24,4 32,9"></polygon>
+                <defs>
+                  <lineargradient id="gradientArrow" x1="0%" x2="100%" y1="0%" y2="0%">
+                    <stop offset="0%" stop-color="#10b981"></stop>
+                    <stop offset="100%" stop-color="#9333ea"></stop>
+                  </lineargradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SECTION 3: Registration Process -->
+    <section class="bg-white rounded-2xl p-5 sm:p-7 border border-slate-200 shadow-md">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+          Registration <span class="text-blue-600">Process</span>
+        </h2>
+        <p class="text-xs sm:text-sm font-semibold text-slate-500 mt-1">Simple Steps to Get Started</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 items-center mt-4">
+        <!-- Steps 1-5 Left Column -->
+        <div class="lg:col-span-7 space-y-3">
+          <!-- Step 1 -->
+          <div class="flex items-center gap-3">
+            <!-- Icon 1 -->
+            <div
+              class="w-10 h-10 rounded-full border border-purple-300 bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+              </svg>
+            </div>
+            <!-- Dotted line -->
+            <div class="w-4 border-b-2 border-dotted border-slate-300"></div>
+            <!-- Number badge -->
+            <span
+              class="w-5 h-5 rounded-full bg-purple-700 text-white font-black text-[10px] flex items-center justify-center flex-shrink-0">1</span>
+            <p class="text-sm font-semibold text-slate-800">Complete the registration form.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex items-center gap-3">
+            <!-- Icon 2 -->
+            <div
+              class="w-10 h-10 rounded-full border border-blue-300 bg-blue-50 flex items-center justify-center flex-shrink-0 text-blue-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+              </svg>
+            </div>
+            <!-- Dotted line -->
+            <div class="w-4 border-b-2 border-dotted border-slate-300"></div>
+            <!-- Number badge -->
+            <span
+              class="w-5 h-5 rounded-full bg-blue-600 text-white font-black text-[10px] flex items-center justify-center flex-shrink-0">2</span>
+            <p class="text-sm font-semibold text-slate-800">Pay the one-time fee of <strong
+                class="text-blue-600">₹999</strong>.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex items-center gap-3">
+            <!-- Icon 3 -->
+            <div
+              class="w-10 h-10 rounded-full border border-emerald-300 bg-emerald-50 flex items-center justify-center flex-shrink-0 text-emerald-600">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+              </svg>
+            </div>
+            <!-- Dotted line -->
+            <div class="w-4 border-b-2 border-dotted border-slate-300"></div>
+            <!-- Number badge -->
+            <span
+              class="w-5 h-5 rounded-full bg-emerald-600 text-white font-black text-[10px] flex items-center justify-center flex-shrink-0">3</span>
+            <p class="text-sm font-semibold text-slate-800">Upload your payment confirmation.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex items-center gap-3">
+            <!-- Icon 4 -->
+            <div
+              class="w-10 h-10 rounded-full border border-amber-300 bg-amber-50 flex items-center justify-center flex-shrink-0 text-emerald-600">
+              <!-- WhatsApp phone icon -->
+              <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                <path
+                  d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.353.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.043.101-.116.433-.506.549-.679.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z">
+                </path>
+              </svg>
+            </div>
+            <!-- Dotted line -->
+            <div class="w-4 border-b-2 border-dotted border-slate-300"></div>
+            <!-- Number badge -->
+            <span
+              class="w-5 h-5 rounded-full bg-amber-500 text-white font-black text-[10px] flex items-center justify-center flex-shrink-0">4</span>
+            <p class="text-sm font-semibold text-slate-800">Get added to the official WhatsApp learning group.</p>
+          </div>
+          <!-- Step 5 -->
+          <div class="flex items-center gap-3">
+            <!-- Icon 5 -->
+            <div
+              class="w-10 h-10 rounded-full border border-purple-300 bg-purple-50 flex items-center justify-center flex-shrink-0 text-purple-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+              </svg>
+            </div>
+            <!-- Dotted line -->
+            <div class="w-4 border-b-2 border-dotted border-slate-300"></div>
+            <!-- Number badge -->
+            <span
+              class="w-5 h-5 rounded-full bg-purple-700 text-white font-black text-[10px] flex items-center justify-center flex-shrink-0">5</span>
+            <p class="text-sm font-semibold text-slate-800">Begin your learning journey with live sessions, mentoring,
+              and career support.</p>
+          </div>
+        </div>
+        <!-- Right Side: Students working with Laptop -->
+        <div class="lg:col-span-5 relative flex flex-col items-center justify-center">
+          <div
+            class="relative w-full max-w-xs rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-gradient-to-b from-blue-50/50 to-indigo-50/20">
+            <!-- Student Group Image -->
+            <img alt="Students collaborating happily over laptop" class="w-full h-60 object-cover object-center"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3cwG8mHE6P5RbvIzxlcWXKJOhVZODAP4zT6a2nccwKUYgZdbCOcCGYQYs9lZVkO4ptuaCar_-XKVFrkMbW_Lezk3WBBkE7iIlDjoNTS-9Z7SJ7rhNrgK3Gr6O_KN3y2xQYs3fQ3cTSqueyXyIS2ah9ORP9JrcuWD1ReF9ZTp581lRLC19QJjY5TvFOIuWoYC__1frU7WljmU9t2u2HXKQfGTy7zsMlhZoCzBTiKY9mAmyD6KdXRW_" />
+            <div class="p-3 text-center bg-white border-t border-slate-100">
+              <p class="font-extrabold text-slate-800 text-sm">Interactive Group Learning</p>
+              <p class="text-[11px] text-slate-500 mt-0.5">Collaborate with peers, clear doubts in real time, and build
+                together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION 4: Global Certification Section -->
+    <section class="bg-white rounded-2xl p-5 sm:p-7 border border-slate-200 shadow-md">
+      <!-- Top Title & Global Shield Card Row -->
+      <div
+        class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 pb-5 border-b border-slate-100">
+        <div>
+          <!-- GOOD NEWS! pill badge with speaker -->
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-600 text-white rounded-full text-[10px] font-black uppercase tracking-wider mb-3 shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+              <path
+                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+            </svg>
+            GOOD NEWS!
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
+            This Course has <br class="hidden sm:inline" />
+            <span class="text-blue-600">Global Certification!</span>
+          </h2>
+          <!-- Green-blue underline bar -->
+          <div class="w-44 h-1 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-full my-2"></div>
+          <p class="text-xs sm:text-sm font-medium text-slate-600 max-w-lg">
+            Take your skills global. Get Industry-Recognized <strong class="text-blue-600 font-bold">Global
+              Certification</strong> after completing this course.
+          </p>
+        </div>
+        <!-- Global Certification Showcase Badge (Right) -->
+        <div
+          class="bg-white border-2 border-blue-200 rounded-2xl p-4 shadow-sm flex items-center gap-6 max-w-md w-full">
+          <!-- Blue Shield with Globe and ribbons -->
+          <div class="relative flex-shrink-0">
+            <div
+              class="w-16 h-20 bg-gradient-to-b from-blue-500 to-blue-700 rounded-xl rounded-b-[28px] flex items-center justify-center text-white shadow-md relative overflow-hidden border-2 border-blue-400">
+              <!-- Globe mesh -->
+              <svg class="w-9 h-9 text-white opacity-90" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
+              </svg>
+            </div>
+            <!-- Checkmark medallion -->
+            <div
+              class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-7 h-7 rounded-full bg-white shadow flex items-center justify-center text-blue-600 font-black border border-blue-200 text-xs">
+              ✓
+            </div>
+          </div>
+          <!-- Text block -->
+          <div>
+            <span
+              class="inline-block bg-amber-400 text-slate-900 text-[12px] font-black px-2 py-0.5 rounded uppercase tracking-wider mb-1">
+              INDUSTRY-RECOGNIZED
+            </span>
+            <h3 class="text-xl font-black text-slate-900 uppercase tracking-tight leading-none">
+              GLOBAL
+            </h3>
+            <h3 class="text-lg font-black text-emerald-600 uppercase tracking-tight leading-none mb-2">
+              CERTIFICATION
+            </h3>
+            <p class="text-[12px] font-extrabold uppercase text-slate-600 tracking-wider">
+              RECOGNIZED. RESPECTED. <span class="text-blue-600">WORLDWIDE.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 3 Steps Pathway (Finish Course -> 75% OFF Exam -> Certified) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-5 items-center">
+        <!-- Step 1 Card -->
+        <div
+          class="course-step-card relative bg-white rounded-2xl p-4 border-2 border-blue-500 shadow-sm flex flex-col justify-between min-h-[160px]">
+          <span
+            class="absolute -top-4 -left-2 w-7 h-7 rounded-full bg-blue-600 text-white font-black text-xs flex items-center justify-center shadow">1</span>
+          <div class="flex items-center gap-3">
+            <div
+              class="step-icon-pulse w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center flex-shrink-0 shadow">
+              <!-- Grad Cap -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-black text-slate-900 text-[16px] uppercase">FINISH THE COURSE</h4>
+            </div>
+          </div>
+          <p class="text-[14px] text-slate-600 mt-2 leading-relaxed">
+            Finish the course and earn your <strong class="text-blue-600">course completion badge</strong>.
+          </p>
+          <!-- Step 1 to 2 Arrow (Desktop) -->
+          <div
+            class="step-arrow-pulse hidden md:flex absolute -right-4 top-1/2 z-10 w-7 h-7 rounded-full bg-blue-50 border border-blue-200 items-center justify-center text-blue-600 font-bold shadow-xs">
+            →
+          </div>
+        </div>
+        <!-- Step 2 Card (75% OFF Highlight) -->
+        <div
+          class="exam-step-card relative bg-white rounded-2xl p-4 border-2 border-emerald-600 shadow-md flex flex-col justify-between min-h-[160px]">
+          <span
+            class="absolute -top-4 -left-2 w-7 h-7 rounded-full bg-emerald-600 text-white font-black text-xs flex items-center justify-center shadow">2</span>
+          <div>
+            <div class="flex items-center gap-3">
+              <div
+                class="step-icon-pulse w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                  <path
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-black text-slate-900 text-[16px] uppercase leading-tight">
+                  GLOBAL CERTIFICATION EXAM <br /><span class="text-emerald-700">Only Through InGage At</span>
+                </h4>
+              </div>
+            </div>
+            <!-- Red 75% OFF Badge -->
+            <div class="my-2 flex justify-center">
+              <span
+                class="step-off-badge inline-block bg-[#dc2626] text-white font-black text-xl sm:text-2xl px-4 py-1 rounded-xl shadow-md tracking-wider">
+                75% OFF
+              </span>
+            </div>
+          </div>
+          <p class="text-[14px] text-slate-600 leading-relaxed text-center">
+            Take the Global Certification Exam at <strong class="text-red-600">75% OFF</strong> from the actual cost –
+            <span class="text-emerald-700 font-bold">only through InGage</span>.
+          </p>
+          <!-- Step 2 to 3 Arrow (Desktop) -->
+          <div
+            class="step-arrow-pulse hidden md:flex absolute -right-4 top-1/2 z-10 w-7 h-7 rounded-full bg-blue-50 border border-blue-200 items-center justify-center text-blue-600 font-bold shadow-xs">
+            →
+          </div>
+        </div>
+        <!-- Step 3 Card -->
+        <div
+          class="certified-step-card relative bg-white rounded-2xl p-4 border-2 border-amber-400 shadow-sm flex flex-col justify-between min-h-[160px]">
+          <span
+            class="absolute -top-4 -left-2 w-7 h-7 rounded-full bg-amber-500 text-white font-black text-xs flex items-center justify-center shadow">3</span>
+          <div class="flex items-center gap-3">
+            <div
+              class="step-icon-pulse w-12 h-12 rounded-full bg-amber-400 text-white flex items-center justify-center flex-shrink-0 shadow">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2.5"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-black text-slate-900 text-[16px] uppercase leading-tight">
+                GET GLOBALLY RECOGNIZED CERTIFIED
+              </h4>
+            </div>
+          </div>
+          <p class="text-[14px] text-slate-600 mt-3 leading-relaxed">
+            Clear the exam and become Globally Certified. Boost your career with global recognition!
+          </p>
+        </div>
+      </div>
+      <!-- Bottom Alert Bar -->
+      <div
+        class="bg-[#eef4ff] border border-blue-200 p-3 sm:p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <!-- Exclamation icon circle -->
+          <div
+            class="w-9 h-9 rounded-full bg-blue-600 text-white font-black text-lg flex items-center justify-center flex-shrink-0 shadow">
+            !
+          </div>
+          <div>
+            <p class="text-[16px] sm:text-sm text-slate-700 leading-relaxed">
+              <strong class="text-blue-900 font-black uppercase tracking-wide">IMPORTANT:</strong>
+              The Global Certification exam fee is not included in the course fee. It is available at <strong
+                class="text-red-600 font-bold">75% discount</strong> from the actual cost <strong
+                class="text-blue-700">only through InGage</strong>.
+            </p>
+          </div>
+        </div>
+        <!-- Scalloped Badge: ONLY THROUGH INGAGE *** -->
+        <div
+          class="scalloped-ribbon bg-[#0a2560] text-white p-3 w-24 h-24 flex flex-col items-center justify-center text-center flex-shrink-0 shadow-lg">
+          <span
+            class="text-[12px] font-black uppercase tracking-wider leading-tight">ONLY<br />THROUGH<br />INGAGE</span>
+          <span class="text-amber-400 text-[12px] mt-0.5">★★★</span>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const freeCourse = document.getElementById('freeCourse');
+      const courseChoices = document.querySelectorAll('input[name="courseChoice"]');
+
+      courseChoices.forEach((choice) => {
+        choice.addEventListener('change', () => {
+          freeCourse.value = choice.value;
+        });
+      });
+    </script>
+    <!-- Contact Us at the end of the main content -->
+    <aside
+      class="mt-8 bg-[#050c1e] text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+      aria-label="Contact Us">
+      <div>
+        <p class="font-bold uppercase text-xs tracking-wider text-blue-400">Contact Us</p>
+        <h2 class="mt-2 text-2xl font-black tracking-tight">InGage Technologies</h2>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-5 text-sm">
+        <p class="text-slate-300">Jagadesh:<br /><a class="text-blue-300 hover:underline" href="tel:+919597781290">+91
+            95977 81290</a></p>
+        <p class="text-slate-300">Email:<br /><a class="text-blue-300 hover:underline"
+            href="mailto:info@myingage.com">info@myingage.com</a></p>
+      </div>
+      <p class="italic font-bold text-amber-300 text-sm">“Build Skills. Get Certified. Get Hired.”</p>
+    </aside>
+  </main>
+  <!-- BEGIN: Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-8 text-center text-xs text-slate-500 font-medium">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>© 2026 InGage Technologies. Official Training Partner for Google Programs. All Rights Reserved.</p>
+      <p class="mt-1 text-slate-400 font-bold">“Build Skills. Get Certified. Get Hired.”</p>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+</body>
+
+</html>
