@@ -316,6 +316,7 @@
       header .text-2xl {
         font-size: 1.3rem !important;
       }
+
       header .text-2xl.lg\:text-3xl {
         font-size: 1.3rem !important;
       }
@@ -336,9 +337,11 @@
         padding: 0.5rem 0.625rem !important;
         gap: 0.5rem !important;
       }
+
       .program-chip h4 {
         font-size: 0.75rem !important;
       }
+
       .program-chip p {
         font-size: 0.65rem !important;
       }
@@ -371,7 +374,7 @@
       }
 
       /* Last step in 2×2+1: full width ── */
-      .grid-cols-2.md\:grid-cols-5 > div:last-child {
+      .grid-cols-2.md\:grid-cols-5>div:last-child {
         grid-column: span 2 !important;
       }
 
@@ -388,9 +391,11 @@
         align-items: flex-start !important;
         gap: 0.5rem !important;
       }
+
       .sm\:col-span-6.flex.items-center.gap-4 .text-5xl {
         font-size: 2rem !important;
       }
+
       .sm\:col-span-6.flex.items-center.gap-4 p {
         font-size: 0.95rem !important;
       }
@@ -405,8 +410,9 @@
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 0.625rem !important;
       }
+
       /* Last step (5) full-width on mobile ── */
-      .grid-cols-1.sm\:grid-cols-2.md\:grid-cols-5 > div:last-child {
+      .grid-cols-1.sm\:grid-cols-2.md\:grid-cols-5>div:last-child {
         grid-column: span 2 !important;
       }
 
@@ -440,6 +446,7 @@
       .flex-col.md\:flex-row.md\:flex-wrap {
         flex-direction: column !important;
       }
+
       .course-card {
         width: 100% !important;
       }
@@ -453,6 +460,7 @@
       footer .md\:col-span-4 {
         padding-top: 1rem;
       }
+
       footer .md\:border-l {
         border-left: none !important;
         border-top: 1px solid #f1f5f9 !important;
@@ -470,9 +478,11 @@
       section.bg-white.rounded-3xl {
         padding: 1rem !important;
       }
+
       section.bg-white.rounded-2xl {
         padding: 1rem !important;
       }
+
       footer.bg-white.rounded-3xl {
         padding: 1rem !important;
       }
@@ -482,6 +492,7 @@
       h3.text-2xl {
         font-size: 1.3rem !important;
       }
+
       h2.text-3xl.font-black {
         font-size: 1.4rem !important;
       }
@@ -491,6 +502,7 @@
         width: 7rem !important;
         height: 7rem !important;
       }
+
       .w-36.h-36.rounded-full .text-3xl {
         font-size: 1.5rem !important;
       }
@@ -503,7 +515,9 @@
       }
 
       /* ── Space-y sections: tighter on mobile ── */
-      .space-y-4 { --tw-space-y-reverse: 0; }
+      .space-y-4 {
+        --tw-space-y-reverse: 0;
+      }
 
       /* ── Inline badge in Programs header ── */
       .border-b-2.border-blue-600 {
@@ -517,9 +531,11 @@
       .program-hub .grid-cols-2 {
         grid-template-columns: 1fr !important;
       }
+
       .program-hub .col-span-2 {
         grid-column: span 1 !important;
       }
+
       /* Price badge row: stack vertically on very small ── */
       .flex-col.sm\:flex-row.items-center.gap-6 {
         flex-direction: column !important;
@@ -694,7 +710,8 @@
           </div>
         </div>
         <!-- Right Side: Badge & Students representation -->
-        <div class="lg:col-span-3 flex flex-row sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-4 sm:gap-5 space-y-0 lg:space-y-4">
+        <div
+          class="lg:col-span-3 flex flex-row sm:flex-row lg:flex-col items-start sm:items-center lg:items-end gap-4 sm:gap-5 space-y-0 lg:space-y-4">
           <!-- Skill badge card -->
           <div
             class="earn-google-card bg-blue-50/80 border border-blue-200/60 rounded-2xl p-3 sm:p-4 text-center max-w-[210px] w-full shadow-sm">
@@ -708,7 +725,7 @@
             </div>
             <h5 class="text-xs font-bold text-slate-800">Earn Google</h5>
             <p class="text-[11px] font-semibold text-blue-800">Skill Badges &amp; Course Certificates</p>
-            <span class="text-[9px] text-slate-400 block mt-0.5">(Where applicable)</span>
+
             <div class="flex justify-center text-amber-400 text-xs mt-1.5 space-x-0.5">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
@@ -733,7 +750,8 @@
       </div>
       <!-- Feature Strip -->
       <!-- BEGIN: FeatureStrip -->
-      <div class="mt-0 pt-4 sm:pt-6 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-4">
+      <div
+        class="mt-0 pt-4 sm:pt-6 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-4">
         <!-- Feature 1 -->
         <div class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors">
           <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0">
