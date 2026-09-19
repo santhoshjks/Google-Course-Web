@@ -352,9 +352,10 @@
         gap: 0.5rem !important;
       }
 
-      /* ── Program list items: allow text wrap ── */
-      .whitespace-nowrap {
-        white-space: normal !important;
+      /* ── High demand badges and text: preserve single line ── */
+      .high-demand-badge,
+      .high-demand-text {
+        white-space: nowrap !important;
       }
 
       /* ── Bonus offer box: reduce padding ── */
@@ -526,8 +527,9 @@
       }
 
       /* ── High Demand text: keep on single line ── */
-      .text-purple-700.font-extrabold,
-      .text-purple-700 {
+      .high-demand-text,
+      .high-demand-badge,
+      .text-purple-700.whitespace-nowrap {
         white-space: nowrap !important;
       }
 
@@ -865,8 +867,8 @@
                 <span class="text-sm font-semibold text-slate-800">Google Cloud Engineering</span>
               </div>
               <span
-                class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 whitespace-nowrap">(High
-                Demand)</span>
+                class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 whitespace-nowrap shrink-0 high-demand-badge"
+                style="white-space: nowrap !important;">(High Demand)</span>
             </div>
             <!-- Program Item 2 -->
             <div
@@ -878,8 +880,8 @@
                 <span class="text-sm font-semibold text-slate-800">Google Generative AI</span>
               </div>
               <span
-                class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 whitespace-nowrap">(High
-                Demand)</span>
+                class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 whitespace-nowrap shrink-0 high-demand-badge"
+                style="white-space: nowrap !important;">(High Demand)</span>
             </div>
             <!-- Program Item 3 -->
             <div
@@ -891,8 +893,8 @@
                 <span class="text-sm font-semibold text-slate-800">Google Cloud Computing Foundations</span>
               </div>
               <span
-                class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 whitespace-nowrap">(High
-                Demand)</span>
+                class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 whitespace-nowrap shrink-0 high-demand-badge"
+                style="white-space: nowrap !important;">(High Demand)</span>
             </div>
             <!-- Program Item 4 -->
             <div
@@ -1091,7 +1093,7 @@
               <div class="text-5xl shrink-0 self-center sm:self-start">🎁</div>
               <div>
                 <p class="text-[20px] font-bold text-slate-800 leading-snug">
-                  Enroll in any one of <span class="text-purple-700 whitespace-nowrap">High Demand Google Program</span> and get second
+                  Enroll in any one of <span class="text-purple-700 whitespace-nowrap high-demand-text" style="white-space: nowrap !important;">High Demand Google Program</span> and get second
                   program <span class="text-emerald-600">absolutely free</span>.
                 </p>
               </div>
@@ -1099,9 +1101,9 @@
             <!-- Visual Equation -->
             <div
               class="sm:col-span-6 bg-slate-50 p-4 rounded-2xl border border-slate-200 flex items-center justify-between text-center gap-0">
-              <div class="flex-1">
+              <div class="flex-1 min-w-0">
                 <span class="text-xs font-bold text-slate-500 uppercase block">Choose any one</span>
-                <span class="text-sm font-extrabold text-purple-700 whitespace-nowrap">High Demand Google Program</span>
+                <span class="text-xs sm:text-sm font-extrabold text-purple-700 whitespace-nowrap high-demand-text block mt-0.5" style="white-space: nowrap !important;">High Demand Google Program</span>
                 <div
                   class="w-7 h-7 mx-auto mt-1 rounded-full bg-white shadow-xs flex items-center justify-center font-bold text-xs text-blue-600">
                   G</div>
