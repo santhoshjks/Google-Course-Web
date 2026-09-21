@@ -93,18 +93,12 @@
     }
 
     .ai-flyer {
-      background-image: linear-gradient(rgba(4, 10, 28, 0.72), rgba(4, 10, 28, 0.82)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=85');
+      background-image: linear-gradient(rgba(7, 19, 46, 0.68), rgba(7, 19, 46, 0.82)), url('images/gda_flyer_bg.jpg');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
     }
 
-    @media (max-width: 640px) {
-      .ai-flyer {
-        background-position: 58% center;
-        background-size: cover;
-      }
-    }
 
     .collaboration-badge-bar {
       background: rgba(255, 255, 255, 0.14);
@@ -234,8 +228,19 @@
 
     @media (max-width: 640px) {
       .ai-flyer {
-        background-position: 58% center;
-        background-size: cover;
+        background-color: #07132e !important;
+        background-image: 
+          linear-gradient(180deg, 
+            rgba(7, 19, 46, 0.35) 0%, 
+            rgba(7, 19, 46, 0.65) 240px, 
+            rgba(7, 19, 46, 0.95) 420px, 
+            #07132e 520px, 
+            #07132e 100%
+          ),
+          url('images/gda_flyer_bg.jpg') !important;
+        background-position: center top, center top !important;
+        background-size: 100% 100%, auto 520px !important;
+        background-repeat: no-repeat, no-repeat !important;
       }
     }
 
@@ -397,11 +402,25 @@
         grid-template-columns: 1fr !important;
       }
 
-      /* ── Step cards: reduce min-height ── */
+      /* ── Step cards: reduce min-height & optimize mobile backgrounds ── */
       .course-step-card,
       .exam-step-card,
       .certified-step-card {
         min-height: 120px !important;
+        background-position: center right !important;
+        background-size: cover !important;
+      }
+
+      .course-step-card {
+        background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 100%), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85') !important;
+      }
+
+      .exam-step-card {
+        background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 100%), url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=85') !important;
+      }
+
+      .certified-step-card {
+        background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 100%), url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=85') !important;
       }
 
       /* ── Alert bar: stack ── */
@@ -486,7 +505,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       <!-- LEFT HERO BROCHURE/FLYER -->
       <section
-        class="lg:col-span-12 bg-[#07132e] ai-flyer text-white rounded-2xl overflow-hidden shadow-xl border border-slate-800 flex flex-col font-sans">
+        class="lg:col-span-12 relative bg-[#07132e] ai-flyer text-white rounded-2xl overflow-hidden shadow-xl border border-slate-800 flex flex-col font-sans">
         <!-- Flyer Top Header Section -->
         <div class="p-6 pb-5 relative ai-hero-header">
           <div class="flex flex-row items-center gap-5">
@@ -896,11 +915,11 @@
               </svg>
             </div>
             <!-- Pitch text -->
-            <div class="text-slate-800 text-xs leading-relaxed">
+            <div class="text-slate-800 text-xs leading-snug sm:leading-relaxed text-center sm:text-left">
               <p class="text-sm font-normal">
-                Enroll in any one of <br />
-                <span class="text-purple-700 font-extrabold text-base">High Demand</span> <br />
-                Google Program and get second program absolutely <span
+                Enroll in any <br class="hidden sm:block" />
+                <span class="text-purple-700 font-extrabold text-base whitespace-nowrap">High Demand</span> <br class="hidden sm:block" />
+                Google Program and get a second program absolutely <span
                   class="text-emerald-600 font-extrabold">free</span>.
               </p>
             </div>
