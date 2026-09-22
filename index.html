@@ -67,7 +67,7 @@
         }
 
         .hero-background {
-            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 48%, rgba(255, 255, 255, 0.78) 100%), url('Ingage_p/images/career_programs_bg.jpg');
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.94) 48%, rgba(255, 255, 255, 0.78) 100%), url('./images/career_programs_bg.jpg');
             background-position: center;
             background-size: cover;
         }
@@ -300,7 +300,7 @@
                         rgba(7, 19, 46, 0.95) 420px,
                         #07132e 520px,
                         #07132e 100%),
-                    url('images/ai_flyer_bg.jpg') !important;
+                    url('./images/ai_flyer_bg.jpg') !important;
                 background-position: center top, center top !important;
                 background-size: 100% 100%, auto 520px !important;
                 background-repeat: no-repeat, no-repeat !important;
@@ -310,6 +310,12 @@
         /* ══════════════════════════════════════
        MOBILE LAYOUT — Comprehensive Fixes
        ══════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .hero-background {
+                background-image: none !important;
+            }
+        }
+
         @media (max-width: 640px) {
 
             /* ── Outer wrapper ── */
@@ -338,12 +344,7 @@
                 font-size: 1.3rem !important;
             }
 
-            /* ── Hero background: optimize for mobile ── */
-            .hero-background {
-                padding: 0.875rem !important;
-                background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.92) 100%), url('images/career_programs_bg.jpg') !important;
-                background-position: center top !important;
-            }
+
 
             /* ── Program Hub: force single column on mobile ── */
             .program-hub {
@@ -635,6 +636,11 @@
                         Google Certified
                         <span class="text-[#1a4bcf]"> Career Programs</span>
                     </h1>
+                    <!-- Mobile Hero Image -->
+                    <div class="block md:hidden overflow-hidden rounded-2xl border border-slate-200/80 shadow-sm">
+                        <img src="./images/career_programs_bg.jpg" alt="Google Certified Career Programs"
+                            class="w-full h-auto object-cover" />
+                    </div>
                     <h2 class="text-base sm:text-xl font-bold text-slate-800">
                         A Career Opportunity for You
                         from the <span class="text-black">in<span class="text-[#a6c844]">Gage</span></span>
@@ -1507,7 +1513,7 @@
                     <div
                         class="card-hdr relative bg-gradient-to-br from-[#0c122c] to-[#1e1b4b] p-6 text-white min-h-[200px] flex flex-col justify-between">
                         <!-- Course Image -->
-                        <img src="Ingage_p/images/card_genai.jpg" alt="Generative AI"
+                        <img src="./images/card_genai.jpg" alt="Generative AI"
                             class="img-zoom absolute inset-0 w-full h-full object-cover opacity-60" />
                         <!-- Dark overlay -->
                         <div
@@ -1541,7 +1547,7 @@
                             </ul>
                         </div>
                         <a class="enroll-btn w-full bg-[#0a192f] hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1 transition-colors"
-                            href="Ingage_p/GGA.html">Enroll Now ➔</a>
+                            href="GGA.html">Enroll Now ➔</a>
                     </div>
                 </article>
                 <!-- Card 2: Google Cloud Computing Foundations (GCCF) -->
@@ -1551,7 +1557,7 @@
                     <div
                         class="card-hdr relative bg-gradient-to-br from-[#0a1e3f] to-[#042f2e] p-6 text-white min-h-[200px] flex flex-col justify-between">
                         <!-- Course Image -->
-                        <img src="Ingage_p/images/card_gccf.jpg" alt="Google Cloud Computing Foundations"
+                        <img src="./images/card_gccf.jpg" alt="Google Cloud Computing Foundations"
                             class="img-zoom absolute inset-0 w-full h-full object-cover opacity-60" />
                         <!-- Dark overlay -->
                         <div
@@ -1585,7 +1591,7 @@
                             </ul>
                         </div>
                         <a class="enroll-btn w-full bg-[#0a192f] hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1 transition-colors"
-                            href="Ingage_p/GCCF.html">Enroll Now ➔</a>
+                            href="GCCF.html">Enroll Now ➔</a>
                     </div>
                 </article>
                 <!-- Card 3: Cloud Engineering Program -->
@@ -1595,7 +1601,7 @@
                     <div
                         class="card-hdr relative bg-gradient-to-br from-[#0f172a] to-[#1e3a8a] p-6 text-white min-h-[200px] flex flex-col justify-between">
                         <!-- Course Image -->
-                        <img src="Ingage_p/images/card_gce.jpg" alt="Cloud Engineering"
+                        <img src="./images/card_gce.jpg" alt="Cloud Engineering"
                             class="img-zoom absolute inset-0 w-full h-full object-cover opacity-60" />
                         <!-- Dark overlay -->
                         <div
@@ -1628,7 +1634,7 @@
                             </ul>
                         </div>
                         <a class="enroll-btn w-full bg-[#0a192f] hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1 transition-colors"
-                            href="Ingage_p/GCE.html">Enroll Now ➔</a>
+                            href="GCE.html">Enroll Now ➔</a>
                     </div>
                 </article>
                 <!-- Card 4: Data Analytics Program -->
@@ -1637,7 +1643,7 @@
                     <div
                         class="card-hdr relative bg-gradient-to-br from-[#06202a] to-[#044e54] p-6 text-white min-h-[200px] flex flex-col justify-between">
                         <!-- Course Image -->
-                        <img src="Ingage_p/images/card_gda.jpg" alt="Data Analytics"
+                        <img src="./images/card_gda.jpg" alt="Data Analytics"
                             class="img-zoom absolute inset-0 w-full h-full object-cover opacity-60" />
                         <!-- Dark overlay -->
                         <div
@@ -1667,7 +1673,7 @@
                             </ul>
                         </div>
                         <a class="enroll-btn w-full bg-[#0a192f] hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1 transition-colors"
-                            href="Ingage_p/GDA.html">Enroll Now ➔</a>
+                            href="GDA.html">Enroll Now ➔</a>
                     </div>
                 </article>
                 <!-- Card 5: Google Cyber Security Program -->
@@ -1676,7 +1682,7 @@
                     <div
                         class="card-hdr relative bg-gradient-to-br from-[#0b132b] to-[#1c2541] p-6 text-white min-h-[200px] flex flex-col justify-between">
                         <!-- Course Image -->
-                        <img src="Ingage_p/images/card_gcs.jpg" alt="Cyber Security"
+                        <img src="./images/card_gcs.jpg" alt="Cyber Security"
                             class="img-zoom absolute inset-0 w-full h-full object-cover opacity-60" />
                         <!-- Dark overlay -->
                         <div
@@ -1706,7 +1712,7 @@
                             </ul>
                         </div>
                         <a class="enroll-btn w-full bg-[#0a192f] hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1 transition-colors"
-                            href="Ingage_p/GCS.html">Enroll Now ➔</a>
+                            href="GCS.html">Enroll Now ➔</a>
                     </div>
                 </article>
             </div><!-- /flex-wrap grid -->
