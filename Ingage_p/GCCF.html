@@ -550,19 +550,21 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       <!-- LEFT HERO BROCHURE/FLYER -->
       <section
-        class="lg:col-span-12 relative bg-[#07132e] ai-flyer text-white rounded-2xl overflow-hidden shadow-xl border border-slate-800 flex flex-col font-sans">
+        class="lg:col-span-12 relative bg-[#07132e] ai-flyer text-white rounded-2xl overflow-hidden shadow-2xl border border-slate-800 flex flex-col font-sans">
+
         <!-- Flyer Top Header Section -->
         <div
-          class="p-6 pb-5 relative ai-hero-header flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div class="flex flex-row items-center gap-5">
-            <!-- Glowing Cloud/Chip Graphic -->
+          class="p-4 sm:p-6 lg:p-7 relative ai-hero-header flex flex-col md:flex-row md:items-center md:justify-between gap-5 border-b border-slate-800/80 bg-gradient-to-b from-blue-950/40 via-transparent to-transparent">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+            <!-- Glowing Graphic -->
             <div
-              class="relative w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0 bg-gradient-to-b from-blue-900/60 to-slate-900/80 rounded-2xl p-1 border border-blue-500/40 flex items-center justify-center overflow-hidden shadow-inner">
+              class="relative w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0 bg-gradient-to-b from-blue-900/60 to-slate-900/90 rounded-2xl p-2 border border-cyan-500/30 flex items-center justify-center overflow-hidden shadow-[0_0_25px_rgba(6,182,212,0.15)]">
               <!-- Radial backlight -->
-              <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-blue-500/20 to-indigo-500/30"></div>
+              <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/25 via-blue-600/20 to-indigo-600/30"></div>
               <!-- Cloud + circuit Graphic -->
-              <svg class="w-24 h-24 text-cyan-400 relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.7)]" fill="none"
-                stroke="currentColor" viewbox="0 0 100 100">
+              <svg
+                class="w-14 h-14 sm:w-20 sm:h-20 text-cyan-400 relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.7)]"
+                fill="none" stroke="currentColor" viewBox="0 0 100 100">
                 <path d="M30 62 a14 14 0 010-28 a18 18 0 0135-6 a12 12 0 0111 12 a13 13 0 01-3 22 z" fill="url(#aiGlow)"
                   stroke-dasharray="3 2" stroke-width="2.5"></path>
                 <circle cx="40" cy="48" fill="#38bdf8" r="3.5"></circle>
@@ -570,197 +572,342 @@
                 <circle cx="50" cy="60" fill="#38bdf8" r="3"></circle>
                 <path d="M40 48 L58 44 M40 48 L50 60 M58 44 L50 60" stroke="#38bdf8" stroke-width="1.8"></path>
                 <defs>
-                  <lineargradient id="aiGlow" x1="0" x2="1" y1="0" y2="1">
+                  <linearGradient id="aiGlow" x1="0" x2="1" y1="0" y2="1">
                     <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"></stop>
                     <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.1"></stop>
-                  </lineargradient>
+                  </linearGradient>
                 </defs>
               </svg>
             </div>
+
             <!-- Title & Subtitle -->
-            <div class="flex-1">
-              <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white leading-none">
-                Google
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center gap-2 mb-1">
+                <span
+                  class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-blue-600/90 text-white rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-pulse"></span>
+                  Official Cohort
+                </span>
+                <span
+                  class="text-[11px] font-semibold text-cyan-300/90 bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-800/60">
+                  45-Hour Specialization
+                </span>
+              </div>
+              <h1 class="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+                Google <span
+                  class="bg-gradient-to-r from-cyan-400 via-blue-300 to-indigo-200 bg-clip-text text-transparent">Cloud
+                  Computing Foundations (GCCF)</span>
               </h1>
-              <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1">
-                Cloud Computing Foundations (GCCF)
-              </div>
-              <div
-                class="inline-block mt-1 px-2.5 py-0.5 bg-blue-600/90 text-white rounded text-xs font-bold uppercase tracking-wider">
-                Program
-              </div>
-              <p class="mt-2 text-xs font-medium text-slate-300">
-                Industry-Aligned Training | Certification <br class="hidden sm:inline" /> | Career Readiness
+              <p class="mt-2 text-xs sm:text-sm font-medium text-slate-300 leading-relaxed">
+                Industry-Aligned Training <span class="text-cyan-400 font-bold">•</span> Certification <span
+                  class="text-cyan-400 font-bold">•</span> Career Readiness
               </p>
             </div>
           </div>
 
           <!-- Collaboration Badge Bar (Liquid Glass) -->
           <div
-            class="collaboration-badge-bar relative w-full md:w-auto md:max-w-xs lg:max-w-sm p-3 sm:p-3.5 flex flex-col gap-2.5 flex-shrink-0">
-            <!-- Partner Header & Logos -->
-            <div class="relative z-10">
-
-              <div class="flex items-center justify-between gap-2 w-full">
-                <div class="flex items-center gap-2">
-                  <span
-                    class="text-base sm:text-lg font-black tracking-tight leading-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]">
-                    <span class="text-[#4285F4]">G</span><span class="text-[#EA4335]">o</span><span
-                      class="text-[#FBBC05]">o</span><span class="text-[#4285F4]">g</span><span
-                      class="text-[#34A853]">l</span><span class="text-[#EA4335]">e</span>
-                  </span>
-
-                  <span class="text-white/60 font-light text-xs select-none">✕</span>
-
-                  <span class="text-base sm:text-lg font-black tracking-tight leading-none flex items-baseline gap-1">
-                    <span><span class="text-black drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">in</span><span
-                        class="text-[#a3e635] drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">gage</span></span>
-                    <span
-                      class="text-xs sm:text-sm font-extrabold text-blue-500 tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">EduTech</span>
-                  </span>
-                </div>
-
+            class="collaboration-badge-bar relative w-full md:w-auto md:min-w-[280px] p-3 sm:p-3.5 flex flex-col gap-2 flex-shrink-0 rounded-xl">
+            <div class="relative z-10 flex items-center justify-between gap-3 w-full">
+              <div class="flex items-center gap-2">
                 <span
-                  class="ml-auto flex-shrink-0 whitespace-nowrap inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-white/20 text-white border border-white/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] backdrop-blur-sm">
-                  Official Partner
+                  class="text-base sm:text-lg font-black tracking-tight leading-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]">
+                  <span class="text-[#4285F4]">G</span><span class="text-[#EA4335]">o</span><span
+                    class="text-[#FBBC05]">o</span><span class="text-[#4285F4]">g</span><span
+                    class="text-[#34A853]">l</span><span class="text-[#EA4335]">e</span>
+                </span>
+
+                <span class="text-white/60 font-light text-xs select-none">✕</span>
+
+                <span class="text-base sm:text-lg font-black tracking-tight leading-none flex items-baseline gap-0.5">
+                  <span class="text-black font-extrabold drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">in</span><span
+                    class="text-[#a3e635] font-extrabold drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">gage</span>
+                  <span
+                    class="text-xs font-black text-blue-400 tracking-tight ml-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">EduTech</span>
                 </span>
               </div>
+
+              <span
+                class="ml-auto flex-shrink-0 whitespace-nowrap inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/20 text-white border border-white/35 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] backdrop-blur-sm">
+                Official Partner
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- What Learners Will Gain (Transformed into Scannable Cards) -->
+        <div class="p-4 sm:p-6 bg-slate-900/40 border-b border-slate-800/80">
+          <div class="flex items-center justify-between gap-2 mb-3 sm:mb-4">
+            <h2 class="text-xs sm:text-sm font-black uppercase tracking-wider text-white flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
+              What Learners Will Gain
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+            <div
+              class="bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition p-3 rounded-xl flex items-start gap-2.5">
+              <div
+                class="w-7 h-7 rounded-lg bg-cyan-950/80 border border-cyan-800/60 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white mb-0.5">Cloud Architecture &amp; Concepts</h4>
+                <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">Understand core cloud computing
+                  concepts, infrastructure patterns, and distributed architecture.</p>
+              </div>
             </div>
 
-          </div>
-        </div>
-        <!-- What Learners Will Gain -->
-        <div class="px-6 py-4 bg-transparent">
-          <h2 class="text-sm font-black uppercase tracking-wider text-white mb-2.5 flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-            What Learners Will Gain
-          </h2>
-          <ul class="space-y-1.5 text-sm text-slate-200">
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold leading-tight">•</span>
-              <span>Understand core cloud computing concepts &amp; architecture</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold leading-tight">•</span>
-              <span>Gain hands-on experience with Google Cloud services</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold leading-tight">•</span>
-              <span>Deploy and manage cloud-based applications</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-cyan-400 font-bold leading-tight">•</span>
-              <span>Build scalable and secure cloud infrastructure</span>
-            </li>
-          </ul>
-        </div>
-        <!-- Two Columns: Program Details & Why This Program -->
-        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4 bg-transparent">
-          <!-- Box 1: Program Details (White Card) -->
-          <div class="bg-white text-slate-900 rounded-xl p-4 shadow flex flex-col justify-start text-left">
-            <h3 class="text-xs font-black uppercase tracking-wider text-blue-900 border-b border-slate-200 pb-2 mb-6">
-              Program Details
-            </h3>
-            <div class="space-y-3 text-xs">
-              <div class="flex items-start gap-2.5">
-                <div
-                  class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2.5"></path>
-                  </svg>
-                </div>
-                <div>
-                  <span class="font-extrabold text-slate-900 block">Duration:</span>
-                  <span class="text-slate-600">45 Hours</span>
-                </div>
+            <div
+              class="bg-slate-900/70 border border-slate-800 hover:border-blue-500/40 transition p-3 rounded-xl flex items-start gap-2.5">
+              <div
+                class="w-7 h-7 rounded-lg bg-blue-950/80 border border-blue-800/60 text-blue-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
               </div>
-              <div class="flex items-start gap-2.5">
-                <div
-                  class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                    <path
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                      stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                  </svg>
-                </div>
-                <div>
-                  <span class="font-extrabold text-slate-900 block">Stream:</span>
-                  <span class="text-slate-600">Engineering &amp; Polytechnic, Arts &amp; Science (All Departments &amp;
-                    Years)</span>
-                </div>
+              <div>
+                <h4 class="text-xs font-bold text-white mb-0.5">Google Cloud Services</h4>
+                <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">Gain hands-on experience with official
+                  Google Cloud compute, storage, networking, and developer services.</p>
               </div>
-              <div class="flex items-start gap-2.5">
-                <div
-                  class="w-6 h-6 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                    <path
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                      stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                  </svg>
-                </div>
-                <div>
-                  <span class="font-extrabold text-slate-900 block">Includes:</span>
-                  <span class="text-slate-600">Hands-on Projects, Tool Access, Skill Badges (Equivalent to Certificate)
-                    &amp; Cloud Labs</span>
-                </div>
+            </div>
+
+            <div
+              class="bg-slate-900/70 border border-slate-800 hover:border-indigo-500/40 transition p-3 rounded-xl flex items-start gap-2.5">
+              <div
+                class="w-7 h-7 rounded-lg bg-indigo-950/80 border border-indigo-800/60 text-indigo-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white mb-0.5">Application Deployment</h4>
+                <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">Deploy, manage, and scale cloud-based
+                  applications using containers, Kubernetes, and App Engine.</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-900/70 border border-slate-800 hover:border-emerald-500/40 transition p-3 rounded-xl flex items-start gap-2.5">
+              <div
+                class="w-7 h-7 rounded-lg bg-emerald-950/80 border border-emerald-800/60 text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-white mb-0.5">Scalable &amp; Secure Infrastructure</h4>
+                <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">Build scalable, highly available, and
+                  secure cloud infrastructure aligned with Google Cloud best practices.</p>
               </div>
             </div>
           </div>
-          <!-- Box 2: Why This Program (Greenish/Navy Card) -->
-          <div class="bg-[#a6c844] text-white rounded-xl p-4 shadow flex flex-col justify-between">
+        </div>
+
+        <!-- Two Columns: Program Details & Why This Program -->
+        <div class="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Box 1: Program Details (Modern Glassmorphic Dark Card) -->
+          <div
+            class="bg-gradient-to-br from-slate-900/90 via-slate-900/95 to-slate-950 border border-slate-800 rounded-xl p-4 sm:p-5 shadow-lg flex flex-col justify-between text-white">
             <div>
-              <h3 class="text-xs font-black uppercase tracking-wider text-blue-900 border-b border-green-700 pb-2 mb-2">
-                Why This Program?
-              </h3>
-              <ul class="text-xs space-y-1.5 text-white">
-                <li class="flex items-start gap-1">
-                  <span>•</span><span>Step-by-step learning from cloud basics to practical implementation</span>
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                <h3
+                  class="text-xs sm:text-sm font-black uppercase tracking-wider text-blue-400 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.7)]"></span>
+                  Program Details
+                </h3>
+                <span
+                  class="text-[11px] font-bold text-blue-300 bg-blue-950/80 border border-blue-800/60 px-2 py-0.5 rounded-full">
+                  All Cohorts
+                </span>
+              </div>
+              <div class="space-y-3 text-sm sm:text-[14px]">
+                <div class="flex items-start gap-3">
+                  <div
+                    class="w-7 h-7 rounded-lg bg-blue-950/80 border border-blue-800/60 text-blue-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="font-extrabold text-white block">Duration:</span>
+                    <span class="text-slate-300 font-medium">45 Hours (Comprehensive Hands-On)</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div
+                    class="w-7 h-7 rounded-lg bg-emerald-950/80 border border-emerald-800/60 text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="font-extrabold text-white block">Target Stream:</span>
+                    <span class="text-slate-300 font-medium">Engineering &amp; Polytechnic, Arts &amp; Science (All
+                      Departments &amp; Years)</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div
+                    class="w-7 h-7 rounded-lg bg-amber-950/80 border border-amber-800/60 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="font-extrabold text-white block">Deliverables &amp; Perks:</span>
+                    <span class="text-slate-300 font-medium">Hands-on Projects, Cloud Labs, Tool Access &amp; Skill
+                      Badges (Certificate Equivalent)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certification & Accreditation Subcard -->
+            <div
+              class="mt-4 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-cyan-500/10 border border-blue-500/30 rounded-xl p-3">
+              <div class="flex items-center justify-between mb-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm">🎓</span>
+                  <span class="text-xs font-black uppercase tracking-wide text-cyan-300">
+                    Official Google Cloud Skill Badges
+                  </span>
+                </div>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Direct credentials recognized across the global tech industry, verifiable on your Google Cloud profile
+                &amp; LinkedIn.
+              </p>
+            </div>
+          </div>
+
+          <!-- Box 2: Why This Program (Modern Glassmorphic Dark Card) -->
+          <div
+            class="bg-gradient-to-br from-slate-900/90 via-slate-900/95 to-slate-950 border border-slate-800 rounded-xl p-4 sm:p-5 shadow-lg flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
+                <h3
+                  class="text-xs sm:text-sm font-black uppercase tracking-wider text-cyan-400 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                  Why This Program?
+                </h3>
+                <span
+                  class="text-[11px] font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-800/60 px-2 py-0.5 rounded-full">
+                  Industry-Grade
+                </span>
+              </div>
+
+              <ul class="text-sm sm:text-[14px] space-y-2.5 text-slate-200">
+                <li class="flex items-start gap-2.5">
+                  <span
+                    class="w-4 h-4 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold">&check;</span>
+                  <span><strong>Step-by-step learning:</strong> Step-by-step learning from cloud basics to practical
+                    implementation.</span>
                 </li>
-                <li class="flex items-start gap-1">
-                  <span>•</span><span>Hands-on labs with real-world cloud scenarios</span>
+                <li class="flex items-start gap-2.5">
+                  <span
+                    class="w-4 h-4 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold">&check;</span>
+                  <span><strong>Hands-on labs:</strong> Real-world scenarios with live Google Cloud console and Qwiklabs
+                    environments.</span>
                 </li>
-                <li class="flex items-start gap-1">
-                  <span>•</span><span>Exposure to industry-standard cloud tools &amp; workflows</span>
+                <li class="flex items-start gap-2.5">
+                  <span
+                    class="w-4 h-4 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold">&check;</span>
+                  <span><strong>Industry-standard tools:</strong> Exposure to standard cloud tools, architectures, and
+                    automated workflows.</span>
                 </li>
-                <li class="flex items-start gap-1">
-                  <span>•</span><span>Build job-ready cloud skills in a high-demand domain</span>
+                <li class="flex items-start gap-2.5">
+                  <span
+                    class="w-4 h-4 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] font-bold">&check;</span>
+                  <span><strong>Job-ready foundations:</strong> Build foundational cloud skills in a universally
+                    high-demand technology domain.</span>
                 </li>
               </ul>
             </div>
+
             <!-- Additional Opportunities Subcard -->
-            <div class="mt-3 bg-white text-slate-900 rounded-lg p-2.5">
-              <div class="flex items-center gap-1.5 mb-1">
-                <span class="text-amber-500">🏆</span>
-                <span class="text-[10px] font-black uppercase tracking-tight text-slate-800">Additional Opportunities
-                  Provided by inGage</span>
+            <div
+              class="mt-4 bg-gradient-to-r from-amber-500/10 via-blue-500/10 to-emerald-500/10 border border-amber-500/30 rounded-xl p-3">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="text-sm">🏆</span>
+                <span class="text-xs font-black uppercase tracking-wide text-amber-300">
+                  Additional Opportunities by inGage
+                </span>
               </div>
-
-
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Priority access to hackathons, exclusive internship referrals, and portfolio reviews by industry
+                mentors.
+              </p>
             </div>
           </div>
         </div>
+
         <!-- Program Structure -->
-        <div class="px-6 py-3 bg-transparent">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-2">Program Structure</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-700/60">
-              <div class="flex items-center gap-2 mb-1">
-                <span
-                  class="w-4 h-4 rounded-full bg-blue-600 text-white font-bold text-[9px] flex items-center justify-center">1</span>
-                <span class="font-bold text-white text-sm">Self-Paced Learning:</span>
+        <div class="p-4 sm:p-6 pt-0 bg-transparent">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider text-slate-200 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+              Program Structure
+            </h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+            <!-- Phase 1 -->
+            <div
+              class="bg-slate-900/90 hover:bg-slate-900 transition p-3.5 sm:p-4 rounded-xl border border-slate-700/70 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="w-5 h-5 rounded-full bg-blue-600 text-white font-black text-xs flex items-center justify-center shadow-sm">1</span>
+                    <span class="font-bold text-white text-xs sm:text-sm">Self-Paced Learning</span>
+                  </div>
+                  <span
+                    class="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 rounded text-[10px] font-bold uppercase tracking-wider">
+                    Included
+                  </span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed pl-7">
+                  Free access to structured foundational modules. Covers cloud basics, infrastructure, and services with
+                  integrated online support for learners.
+                </p>
               </div>
-              <p class="text-xs text-slate-400 pl-6">Free access to structured foundational modules. Covers cloud
-                basics, infrastructure, and services. Integrated online support for learners.</p>
             </div>
-            <div class="bg-slate-900/80 p-2.5 rounded-lg border border-slate-700/60">
-              <div class="flex items-center gap-2 mb-1">
-                <span
-                  class="w-4 h-4 rounded-full bg-blue-600 text-white font-bold text-[9px] flex items-center justify-center">2</span>
-                <span class="font-bold text-white text-sm">Advanced Training &amp; Guided Learning:</span>
+
+            <!-- Phase 2 -->
+            <div
+              class="bg-slate-900/90 hover:bg-slate-900 transition p-3.5 sm:p-4 rounded-xl border border-slate-700/70 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="w-5 h-5 rounded-full bg-indigo-600 text-white font-black text-xs flex items-center justify-center shadow-sm">2</span>
+                    <span class="font-bold text-white text-xs sm:text-sm">Advanced Guided Training</span>
+                  </div>
+                  <span
+                    class="px-2 py-0.5 bg-blue-500/20 text-blue-300 border border-blue-500/40 rounded text-[10px] font-bold uppercase tracking-wider">
+                    Instructor-Led
+                  </span>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed pl-7">
+                  Instructor-led in-person sessions by industry experts, live interactive hands-on masterclasses, and
+                  capstone guidance.
+                </p>
               </div>
-              <p class="text-xs text-slate-400 pl-6">Instructor-led in-person sessions by industry experts (Paid per
-                student).</p>
             </div>
           </div>
         </div>
@@ -825,7 +972,7 @@
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-2" for="freeCourse">Select Your Free
+            <label class="block text-xs font-semibold text-slate-700 mb-2" for="freeCourse">Select Your Complimentary
               Course</label>
             <input id="freeCourse" name="freeCourse" required="" type="hidden" value="" />
             <div
