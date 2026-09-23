@@ -972,41 +972,56 @@
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-slate-700 mb-2" for="freeCourse">Select Your Complimentary
+            <label class="block text-xs font-semibold text-slate-700 mb-2" for="freeCourse">Select Your High Demand
               Course</label>
             <input id="freeCourse" name="freeCourse" required="" type="hidden" value="" />
             <div
-              class="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-6 w-full rounded-2xl border border-blue-100 bg-slate-50 p-4 shadow-inner"
+              class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 w-full rounded-2xl border border-blue-100 bg-slate-50 p-4 shadow-inner"
               role="radiogroup" aria-label="Free course options">
+              <!-- Google Data Analytics (GDA) -->
               <label
-                class="course-option course-selector-box relative flex min-w-0 h-auto min-h-48 sm:h-52 cursor-pointer flex-col items-start gap-3 rounded-xl p-3 sm:flex-row sm:items-center hover:bg-transparent">
-                <input class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-600" name="courseChoice" required=""
-                  type="radio" value="dataanalytics" />
-                <span class="block h-28 w-full min-w-0 shrink-0 overflow-hidden rounded-lg sm:h-full sm:w-52">
-                  <img alt="Google Data Analytics course" class="h-full w-full object-cover"
-                    src='./images/gda_flyer_bg.jpg' />
-                </span>
-                <span class="min-w-0 flex-1">
-                  <span class="block text-sm font-black leading-tight text-slate-900 sm:text-base">Google Data Analytics
-                    (GDA)</span>
-                  <span class="mt-1 block text-xs font-semibold leading-tight text-slate-600 sm:text-sm">Turn raw data
-                    into business intelligence using Google-grade data workflows</span>
-                </span>
+                class="course-option course-selector-box relative flex flex-col justify-between h-full min-w-0 cursor-pointer rounded-2xl p-4 hover:bg-transparent has-[:checked]:border-blue-600 has-[:checked]:ring-2 has-[:checked]:ring-blue-600/30">
+                <div>
+                  <div class="mb-2.5 flex items-center">
+                    <input class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-600" name="courseChoice" required=""
+                      type="radio" value="dataanalytics" />
+                  </div>
+                  <div class="w-full aspect-video overflow-hidden rounded-xl mb-3 shadow-xs bg-slate-900">
+                    <img alt="Google Data Analytics course" class="h-full w-full object-cover"
+                      src='./images/gda_flyer_bg.jpg' />
+                  </div>
+                  <div>
+                    <span class="block text-sm sm:text-base font-black leading-tight text-slate-900">Google Data
+                      Analytics
+                      (GDA)</span>
+                    <span class="mt-1.5 block text-xs sm:text-sm font-semibold leading-relaxed text-slate-600">Turn raw
+                      data
+                      into business intelligence using Google-grade data workflows</span>
+                  </div>
+                </div>
               </label>
+
+              <!-- Google Cyber Security (GCS) -->
               <label
-                class="course-option course-selector-box relative flex min-w-0 h-auto min-h-48 sm:h-52 cursor-pointer flex-col items-start gap-3 rounded-xl p-3 sm:flex-row sm:items-center hover:bg-transparent">
-                <input class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-600" name="courseChoice" type="radio"
-                  value="cybersecurity" />
-                <span class="block h-28 w-full min-w-0 shrink-0 overflow-hidden rounded-lg sm:h-full sm:w-52">
-                  <img alt="Google Cyber Security course" class="h-full w-full object-cover"
-                    src='./images/gcs_flyer_bg.jpg' />
-                </span>
-                <span class="min-w-0 flex-1">
-                  <span class="block text-sm font-black leading-tight text-slate-900 sm:text-base">Google Cyber Security
-                    (GCS)</span>
-                  <span class="mt-1 block text-xs font-semibold leading-tight text-slate-600 sm:text-sm">Protect digital
-                    assets and respond to cyber threats using Google's security tools</span>
-                </span>
+                class="course-option course-selector-box relative flex flex-col justify-between h-full min-w-0 cursor-pointer rounded-2xl p-4 hover:bg-transparent has-[:checked]:border-blue-600 has-[:checked]:ring-2 has-[:checked]:ring-blue-600/30">
+                <div>
+                  <div class="mb-2.5 flex items-center">
+                    <input class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-600" name="courseChoice" type="radio"
+                      value="cybersecurity" />
+                  </div>
+                  <div class="w-full aspect-video overflow-hidden rounded-xl mb-3 shadow-xs bg-slate-900">
+                    <img alt="Google Cyber Security course" class="h-full w-full object-cover"
+                      src='./images/gcs_flyer_bg.jpg' />
+                  </div>
+                  <div>
+                    <span class="block text-sm sm:text-base font-black leading-tight text-slate-900">Google Cyber
+                      Security
+                      (GCS)</span>
+                    <span class="mt-1.5 block text-xs sm:text-sm font-semibold leading-relaxed text-slate-600">Protect
+                      digital
+                      assets and respond to cyber threats using Google's security tools</span>
+                  </div>
+                </div>
               </label>
             </div>
           </div>
